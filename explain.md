@@ -1,4 +1,52 @@
-```
+
+- As decompression of the whole dictionary consumes a lot of resources, it splits into multiple sub-dictionary files.
+
+### Type 1 dict - English Words:
+- First Char is Alphabet a to z, split into 9 dicts
+- 0 : [a, c]
+- 1 : [d, f]
+- 2 : [g, i]
+- 3 : [j, l]
+- 4 : [m, o]
+- 5 : [p, r]
+- 6 : [s, u]
+- 7 : [v, x]
+- 8 : [y, z]
+
+### Type 2A dict - Mixed Words:
+- First Char is Alphabet a to z, Second Char is Alphabet _ to k
+- 0 : [a, ak]
+- 1 : [b, bk]
+...
+- 25 : [z, zk]
+
+### Type 2B dict - Mixed Words:
+- First Char is Alphabet a to z, Second Char is Alphabet l to z
+- 26 : [al, az]
+- 27 : [bl, bz]
+...
+- 51 : [zl, zz]
+
+### Type 3 dict - Mixed Words:
+- Not fall into Type 2A or 2B
+- 52
+
+### Type 4 dict - Related words:
+- 0 : [] - key1stChar <= 21413
+- 1 : [] - 21413 < key1stChar <= 23460
+- 2 : [] - 23460 < key1stChar <= 25238
+...
+- 8 : [] - 36076 < key1stChar <= 38287
+- 9 : [] - 38287 < key1stChar
+
+
+
+
+
+## Source Code Reference:
+
+
+```java
 
     public String getCandidateMap(char key1stChar, char key2ndChar){
         String candidateMap;
