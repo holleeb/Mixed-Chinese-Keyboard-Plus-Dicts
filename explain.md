@@ -51,11 +51,13 @@ dictionaryKey1\tCandidates1\bSimplifiedChineseCandidates1\n
 dictionaryKey2\tCandidates2\bSimplifiedChineseCandidates2\n
 dictionaryKey3\tCandidates3\bSimplifiedChineseCandidates3\n
 ...
+```
 
 ​
 * `\t`  `\b` are used as separators
 ​
 ### Example - English Dict
+* foresaw
 * Dict : 1677940399430_1_2131623937
 * `foresaw  7foresee8foreseen` => foresaw; foresee; foreseen
 ​
