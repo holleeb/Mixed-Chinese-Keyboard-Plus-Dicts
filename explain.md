@@ -53,8 +53,27 @@ dictionaryKey3\tCandidates3\bSimplifiedChineseCandidates3\n
 ...
 ```
 
-​
 * `\t`  `\b` are used as separators
+
+* "\u0000" is used for traditionalRareIndex
+* "\b" is used for simplifiedIndex
+* "\f" is used for simplifiedRareIndex
+
+```java
+
+if ((simplifiedRareIndex > endIndex) || (simplifiedRareIndex < startIndex)) {
+    simplifiedRareIndex = endIndex;
+}
+
+if ((simplifiedIndex > simplifiedRareIndex) || (simplifiedIndex < startIndex)) {
+    simplifiedIndex = simplifiedRareIndex;
+}
+if ((traditionalRareIndex > simplifiedIndex) || (traditionalRareIndex < startIndex)) {
+    traditionalRareIndex = simplifiedIndex;
+}
+        
+```
+
 ​
 ### Example - English Dict
 * foresaw
