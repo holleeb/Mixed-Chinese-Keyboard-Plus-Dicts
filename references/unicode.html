@@ -3,6 +3,14 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 <meta property="og:image" content="uuencode.png">
 <link rel="apple-touch-icon" href="uuencode.png"/>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+	html body{
+		font-family:'Noto Sans', sans-serif;
+	}
+
+	</style>
 <script type='module'>
 
 // Unicode https://ja.wikipedia.org/wiki/Unicode
@@ -11,16 +19,20 @@ window.onload = function() {
 	const nw = 0x40
 	const nmax = 0x10FFFF // 1114111 == 1,114,111
 	//const nmax = 0x100
+	const fragment = document.createDocumentFragment();
+	const arr = Array(nw);
+	
 	for (let i = 0; i <= nmax; i += nw) {
 		const s = []
 		for (let j = 0; j < nw; j++) {
 			//s.push(String.fromCharCode(i + j))　// fromCharCode だと 0xffff まで
-			s.push(String.fromCodePoint(i + j))
+			arr[j]=(i + j)
 		}
 		const div = document.createElement('div')
-		div.textContent = i.toString(16) + " " + s.join("")
-		main.appendChild(div)
+		div.textContent = i.toString(16) + " " + String.fromCodePoint(...arr)
+		fragment.appendChild(div)
 	}
+	main.appendChild(fragment);
 }
 
 const decU = function(s) {
