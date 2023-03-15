@@ -1,4 +1,16 @@
 {
     "files.autoGuessEncoding": false,
-    "files.encoding": "utf-8",
+    "files.encoding": "utf8",
+    "[ms1]":{
+        "files.encoding": "utf8"
+    },
+    "[ms]":{
+        "files.encoding": "utf8"
+    },
+    "[ms2]":{
+        "files.encoding": "utf8"
+    },
+    "[ms3]":{
+        "files.encoding": "utf8"
+    },
 }
